@@ -3,6 +3,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const http = require('http');
 
+dotenv.config();
+
 const { connectDB } = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
@@ -11,7 +13,6 @@ const messageRoutes = require('./routes/messageRoutes');
 const { initSocket } = require('./sockets/io');
 const { requestLogger } = require('./middleware/logger');
 
-dotenv.config();
 connectDB();
 
 const app = express();
